@@ -1,0 +1,35 @@
+<%- include('partials/header') %>
+
+<div class="container-fluid">
+    <h2 class="text-center">List of Concerts</h2>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Date</th>
+            <th scope="col">Band</th>
+            <th scope="col">Place</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <% concerts.forEach(concert => { %>
+            <tr>
+                <th scope="row"><%= concert.concertId %></th>
+                <td><%= concert.concertDate %></td>
+                <td><%= concert.Band.bandName %></td>
+                <td><%= concert.placeId %></td>
+            </tr>
+        <% }); %>
+        </tbody>
+    </table>
+</div>
+
+<script type="text/javascript">
+    require(['/scripts/main.js'], (main) => {
+        // require(['modules/profile/main-profile']);
+    });
+
+</script>
+
+<%- include('partials/footer') %>

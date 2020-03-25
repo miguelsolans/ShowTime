@@ -1,0 +1,14 @@
+<%- include('partials/header') %>
+
+<h2 class="text-center">Dashboard</h2>
+<div id="drilldown">
+
+</div>
+
+<script type="text/javascript">
+    require(['/scripts/main.js'], (main) => {
+        require(['modules/charting']);
+    });
+</script>
+
+<%- include('partials/footer') %>
