@@ -30,18 +30,22 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                    <a class="dropdown-item" href="#">New Place</a>
+                    <a class="dropdown-item" href="/new-place">New Place</a>
                     <a class="dropdown-item" href="/new-band">New Band</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">New Concert</a>
+                    <a class="dropdown-item" href="/new-concert">New Concert</a>
+
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/list">List Shows</a>
+                <a class="nav-link" href="/list-concerts">List Shows</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/list-bands">List Bands</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0" action="/bands/search/" method="POST">
-            <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">
+        <form class="form-inline my-2 my-lg-0" action="/band/search/" method="GET">
+            <input class="form-control mr-sm-2" type="search" name="bandName" placeholder="Search" aria-label="Search">
 
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search Band</button>
         </form>

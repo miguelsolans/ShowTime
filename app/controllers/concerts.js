@@ -2,10 +2,10 @@ const Concert = require('../models/concert');
 const Band = require('../models/band');
 const Place = require('../models/place');
 const Genre = require('../models/genre');
-const sequelize = require('../services/mysql')
+const sequelize = require('../services/mysql');
 
 module.exports.list = ( projection ) => {
-    return Concert.findAll({ attributes: projection, include: [Band] })
+    return Concert.findAll({ attributes: projection, include: [Band], order: [[ 'concertDate', 'DESC' ]] })
 };
 
 module.exports.countByGenre = () => {

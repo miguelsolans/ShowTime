@@ -1,0 +1,39 @@
+<%- include('partials/header') %>
+
+    <h2 class="text-center">Registered Bands</h2>
+
+<div class="container-fluid">
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Genre</th>
+            <th scope="col">Country</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <% bands.forEach(band => { %>
+            <tr>
+                <th scope="row"><%= band.bandId %></th>
+                <td><%= band.bandName %></td>
+                <td><%= band.Genre.genreName %></td>
+                <td><%= band.countryCode %></td>
+            </tr>
+        <% }); %>
+        </tbody>
+    </table>
+
+</div>
+
+
+<script type="text/javascript">
+    require(['/scripts/main.js'], (main) => {
+        // require(['modules/profile/main-profile']);
+    });
+
+</script>
+
+
+<%- include('partials/footer') %>

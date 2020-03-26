@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+
+<h2 class="text-center">Select for: <%= artist %></h2>
+
+<div class="container-fluid">
+    <div class="row">
+        <% spotifyData.forEach( spotify => { %>
+            <div class="col-4">
+                <img src="<%= spotify.images[0].url %>" class="img-fluid">
+
+                <span>Genres: </span>
+                <% spotify.genres.forEach(genre => { %>
+                    <span><%= genre %></span>
+                <% }) %>
+            </div>
+        <% }) %>
+    </div>
+</div>
+
+
+<%- include('partials/footer') %>

@@ -1,7 +1,8 @@
 <%- include('partials/header') %>
 
+<h2 class="text-center">List of Concerts</h2>
+
 <div class="container-fluid">
-    <h2 class="text-center">List of Concerts</h2>
     <table class="table">
         <thead class="thead-dark">
         <tr>
@@ -16,7 +17,8 @@
         <% concerts.forEach(concert => { %>
             <tr>
                 <th scope="row"><%= concert.concertId %></th>
-                <td><%= concert.concertDate %></td>
+
+                <td><%= concert.concertDate.slice(0, 10) %></td>
                 <td><%= concert.Band.bandName %></td>
                 <td><%= concert.placeId %></td>
             </tr>

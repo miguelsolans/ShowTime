@@ -1,6 +1,6 @@
 const Band = require('../models/band');
 const Genre = require('../models/genre');
-
+const sequelize = require('../services/mysql');
 
 module.exports.list = () => {
 
@@ -21,4 +21,8 @@ module.exports.add = ({ bandName, countryCode, genreId }) => {
 
 
     return Band.create(newBand)
+};
+
+module.exports.withoutSpotify = (limit) => {
+    return sequelize.query(`SELECT * FROM Band WHERE spotifyId IS NULL LIMIT ${limit};`)
 };

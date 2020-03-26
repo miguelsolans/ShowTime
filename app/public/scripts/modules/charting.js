@@ -14,6 +14,7 @@ define([
                 chart: {
                     type: 'column'
                 },
+                credits: false,
                 title: {
                     text: 'Concerts by Genre'
                 },
