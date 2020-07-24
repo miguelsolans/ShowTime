@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express.Router();
 const bcrypt = require('bcryptjs');
-const User = require('../../models/user');
+const User = require('../../controllers/users');
 
 app.get('/', (req, res) => {
 
@@ -33,7 +33,7 @@ app.post('/login', (req, res) => {
         .catch(err => res.jsonp(err));
 });
 
-app.post('/register', (req, res) => {
+app.post('/register', async (req, res) => {
     console.log("Add new user");
 
     User.findOne({username: req.body.username})

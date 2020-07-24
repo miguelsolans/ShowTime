@@ -2,7 +2,7 @@ const express = require('express');
 const app = express.Router();
 
 const Band = require('../../controllers/bands');
-const Spotify = require('../../services/spotify');
+// const Spotify = require('../../services/spotify');
 
 app.get('/', (req, res) => {
     Band.list()
@@ -32,15 +32,15 @@ app.get('/without-spotify', (req, res) => {
         .catch(err => res.jsonp(err));
 });
 
-app.get('/spotify/:artist', (req, res) => {
-    const artist = req.params.artist;
-
-    Spotify.search({ type: 'artist', query: artist }, (err, data) => {
-        if(err) res.jsonp(err);
-
-        res.jsonp(data);
-    })
-});
+// app.get('/spotify/:artist', (req, res) => {
+//     const artist = req.params.artist;
+//
+//     Spotify.search({ type: 'artist', query: artist }, (err, data) => {
+//         if(err) res.jsonp(err);
+//
+//         res.jsonp(data);
+//     })
+// });
 
 
 module.exports = app;

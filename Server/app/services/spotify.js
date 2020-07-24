@@ -5,5 +5,4 @@ const spotifyKeys = {
     secret: process.env.SPOTIFY_SECRET,
 };
 
-const spotify =
 module.exports = new Spotify(spotifyKeys);
