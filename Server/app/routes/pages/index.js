@@ -51,10 +51,12 @@ app.get('/new-band', (req, res) => {
 });
 
 app.get('/new-concert', (req, res) => {
-    res.send("New Concert");
+    res.render('new-concert');
 });
 
 app.get('/new-place', (req, res) => {
+
+
     res.send('New Place');
 });
 

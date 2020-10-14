@@ -14,12 +14,3 @@ const Genre = sequelize.define('Genre', {
 });
 
 module.exports = Genre;
-
-// // force: true will drop the table if it already exists
-// User.sync({force: false}).then(() => {
-//     // Table created
-//     return User.create({
-//         firstName: 'John',
-//         lastName: 'Hancock'
-//     });
-// });

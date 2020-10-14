@@ -16,7 +16,7 @@ const Place = sequelize.define('Place', {
         type: Sequelize.STRING,
         required: true
     },
-    typeOfVenue: {
+    typeOfVenueId: {
         type: Sequelize.INTEGER,
         references: {
             model: 'TypeOfVenue',

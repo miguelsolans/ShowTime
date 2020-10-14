@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express.Router();
-
+const Place = require('../../controllers/place');
 const Concerts = require('../../controllers/concerts');
 
 app.get('/', (req, res) => {
@@ -25,5 +25,16 @@ app.get('/drilldown/:query', (req, res) => {
     }
 });
 
+app.post('/:id', async (req, res) => {
+    const id = req.params.id;
+
+    let p = await Place.getPlaceById(id);
+    // Fetch Vanue ...
+
+    res.json(p);
+    // Band Exists
+
+    // Insert
+});
 
 module.exports = app;

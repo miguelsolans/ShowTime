@@ -38,6 +38,7 @@ Concert.belongsTo(Band, {
     foreignKey: 'bandId'
 });
 
+
 Concert.belongsTo(Place, {
     foreignKey: 'placeId'
 });
